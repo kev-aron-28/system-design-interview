@@ -370,3 +370,54 @@ The system needs to decide which server should be the leader in two cases:
 - HS algorithm
 - Bully algorithm
 - Gossip protocol
+
+# Big data tools
+When you have a very large amount of data, then we use big data tools to process it
+
+Big Data Tools uses the distributed system method.
+
+In this, we have a coordinator and workers. The client makes the request to the coordinator and its job is to divide the large dataset into smaller ones, assign it to the worker, 
+take the result from the worker and combine it and return the result. 
+
+There are several things to take care of by the coordinator in this systemÑ
+- If any worker crashes, then move its data to another machine for processing
+- Recovery: This means if any worker goes down, then restart it.
+- Take the individual results from the worker and combine them to return the final result.
+- Scaling and redistribution of data
+- Logging
+
+# Consistency
+Distributed means leveraging multiple machines instead of one to do our work.
+Since consistency means data should be the same across all nodes (machines) at any point in time.
+So, it will only come into the picture when we have distributed systems which are stateful
+
+Consistency:
+- Strong consistency
+- Eventual consistency
+
+
+## Strong consistency
+Any read operation after a write operation will return the most recent write, the systems behaves as if only
+one copy of the data exists
+
+You will choose this with systems like banks or trading applications
+
+
+## Eventual consistency
+It does not guarantee immediate consistency after a write operation but ensures that eventually, all reads will return the same value
+
+## Ways to achieve strong consistency
+1. Synchronous replication: when a write operation is performed, all replicas are updated before acknowleding the write to the client
+
+2. Quorum-based protocols:  In Distributed databases, the leader-follower setup is followed. When a follower completes the write or read operation
+                             it gives ack to the leader.
+                             - Read quorum: refers to the number of followers who return the data for a read.
+                             - Write quorum: refers to the number of followers who ack the write for a particular key
+
+3. Consensus algorithms 
+
+## Ways to achieve eventual consistency
+1. Asynchrounous replication
+2. Quorum-based protocols
+3. Vector clocks
+4. Gossip protocl
