@@ -61,7 +61,7 @@ dead letter queue
 
 6. Patrones de datos avanzados
 - Distributed Cache
-- onsistent Hashing
+- Consistent Hashing
 - Distributed Locks
 
 8. Excercices
