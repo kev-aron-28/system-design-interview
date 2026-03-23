@@ -19,23 +19,23 @@
     - HAProxy
     - AWS ELB
 - Caching Pattern:
-Cache aside
-Write through
-Write back
-TTL cache
-cache invalidation
-cache stampede
-stale data
+    - Cache aside
+    - Write through
+    - Write back
+    - TTL cache
+    - cache invalidation
+    - cache stampede
+    - stale data
 - Database Replication Pattern
-Read replicas
-Leader-follower
-Replication lag
+    - Read replicas
+    - Leader-follower
+    - Replication lag
 - Database Sharding Pattern
-Range sharding
-Hash sharding
-Directory based
-Rebalancing
-Cross shard queries
+    - Range sharding
+    - Hash sharding
+    - Directory based
+    - Rebalancing
+    - Cross shard queries
 
 
 3. Patrones de comunicación
@@ -63,6 +63,7 @@ dead letter queue
 - Distributed Cache
 - Consistent Hashing
 - Distributed Locks
+- Leader election
 
 8. Excercices
 Design Twitter
