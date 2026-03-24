@@ -1,4 +1,4 @@
-# Database replication
+# Database replication (Master slave)
 Database replication is a pattern where data from one database (primary) is copied to multiple database (replicas)
 with goals of:
 - Improve read scalability
