@@ -43,7 +43,7 @@
 RabbitMQ
 Kafka
 SQS
-BullMQ (como el que usas)
+BullMQ
 async processing
 retries
 dead letter queue
@@ -64,6 +64,7 @@ dead letter queue
 - Consistent Hashing
 - Distributed Locks
 - Leader election
+- Idempotency
 
 8. Excercices
 Design Twitter
