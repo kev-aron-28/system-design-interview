@@ -132,3 +132,87 @@ Ordering is not:
 EVerything happens in order 
 Ordering is:
 Things that affect the same entity happen in order
+
+# Pub/Sub pattern
+Publishers sends events to a topic, and multiple subscribers receive them independently
+
+## Components
+
+- Publisher
+    - Emits events
+    - Does not know who consumes them
+
+- Broker
+    - Apache Kafka
+    - RabbitMQ
+    - Amazon SNS
+
+- Subscribers
+    - Listen to topics
+    - React independently
+
+- Topic: Logical channel
+
+## Key property
+If you dont have Pub/Sub
+Then a UseCase:
+
+``` 
+UserService → EmailService
+            → AnalyticsService
+            → BillingService
+```
+
+But when you have a pub/sub
+
+```
+UserService → Topic → Subscribers
+```
+- Loose coupling
+- Easy to add / remove services
+
+
+## Pub/Sub vs Queue
+- Queue: One message and one consumer
+- Pub/Sub: One message and many consumers, fan-out model
+
+## Pub/Sub vs Stream
+- Pub/Sub
+    - Event is pushed to subscribers
+    - May or may not persist messages
+    - Focus: Distribution
+
+- Stream 
+    - Events stored as log
+    - Consumers pull at their own pace
+    - Can replay
+
+
+# Delivery models
+
+## Push models
+The broker pushs events to subscriber
+
+- Simple
+- Less control
+
+## Pull model 
+The subscriber pulls the event from the broker
+
+- More control
+- Better scalability
+
+# Delivery guarantees
+
+- At-most-once
+    - No duplicates
+    - Possible loss
+
+- At-least-once
+    - No loss
+    - Possible duplication
+    - Requires idempotency
+
+- exctly-once
+    - complex
+    - rare in pratice
