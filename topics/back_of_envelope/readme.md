@@ -45,7 +45,7 @@ with 100% means a service that has 0 downtime.
 
 # Examples
 
-## Estimate Twitter QPS and storage requirements
+## Estimate Twitter QPS and storage requirements                                                            
 Assumptions:
 - 300 million montly active users
 - 50% of users use Twitter daily
@@ -94,3 +94,6 @@ Total data = number of events x size per event
 Example:
 100M events / day
 Each = 1KB
+
+10^8 x 10^3 = 10^11 bytes
+~ 100 GB/day
