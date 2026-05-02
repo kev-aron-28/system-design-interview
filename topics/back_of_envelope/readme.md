@@ -2,7 +2,6 @@
 
 Sometimes you are asked to estimate system capacity or performance requirements using a back-of-the-envelope estimation
 
-
 ## CPU and memry (nanoseconds, microseconds)
 L1 cache reference → ~0.5 ns
 L2 cache reference → ~7 ns
